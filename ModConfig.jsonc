@@ -1,0 +1,137 @@
+{
+  // ================================================================
+  // NIMRODS MODS CONFIGURATION
+  // ================================================================
+  // This file controls all installed mods. Save to apply changes instantly!
+  // Hot-reload: Edit while playing, changes apply automatically.
+  // ================================================================
+  
+  "SpawnMod": {
+    // Extra enemies per original spawn (0=off, 1=double, 2=triple, etc.)
+    "ExtraSpawns": 1,
+    
+    // Enable/disable this mod
+    "Enabled": true,
+    
+    // Skip special formation spawns (circle/square/clump) - recommended: true
+    "ExcludeSpecialSpawns": true,
+    
+    // Skip splitter enemies that multiply when killed - recommended: true
+    "ExcludeSplitters": true,
+    
+    // Max enemies on screen before stopping spawns (lower = better performance)
+    "MaxEnemyEntities": 2500,
+    
+    // Show debug messages in game console
+    "ShowDebugMessages": false,
+    
+    // Enable automatic mini-boss spawning during gameplay
+    //Turn off boss intro
+    // Time-based progression: 0-4:15 (Splitserpent/Dingleberry) -> 4:15-8:15 (+Bertha) -> 8:15-12:15 (+Carl Jr/Charlie) -> 12:15+ (All bosses)
+    "EnableMiniBossSpawning": true,
+    
+    // Time interval between mini-boss spawns (in seconds)
+    "MiniBossSpawnInterval": 30.0,
+    
+    // Boss difficulty selection (0=Normal, 1=Mixed, 2=Hard)
+    "BossDifficulty": 0,
+    
+    // Extra bosses to spawn (0=1 boss, 1=2 bosses, 2=3 bosses total)
+    "ExtraBossSpawns": 0
+  },
+  
+  "RerollMod": {
+    // Unlimited weapon upgrade rerolls for Gambler Pods
+    "Enabled": true,
+    "ShowDebugMessages": false
+  },
+  
+    "CollectionRangeMod": {
+    // Massive pickup range for XP orbs and items
+    "Enabled": true,
+    "ShowDebugMessages": false
+  },
+
+  "EnemyScaling": {
+    // Enable/disable enemy scaling
+    "Enabled": true,
+
+    // Time scaling factor - ADDITIVE scaling system
+    // Formula: Final Multiplier = Base Multiplier × (1.0 + minutes × TimeScalingFactor)
+    // 
+    // How it works:
+    // - Every minute adds TimeScalingFactor to the base multiplier
+    // - Example with TimeScalingFactor = 0.1:
+    //   • 0 minutes: 1.0x (no change)
+    //   • 1 minute: 1.0 + 0.1 = 1.1x (10% increase)
+    //   • 5 minutes: 1.0 + 0.5 = 1.5x (50% increase)
+    //   • 10 minutes: 1.0 + 1.0 = 2.0x (100% increase)
+    //   • 24 minutes: 1.0 + 2.4 = 3.4x (240% increase)
+    //
+    // Example with TimeScalingFactor = 2.0 (EXTREME):
+    //   • 1 minute: 1.0 + 2.0 = 3.0x (200% increase)
+    //   • 5 minutes: 1.0 + 10.0 = 11.0x (1000% increase)
+    //   • 24 minutes: 1.0 + 48.0 = 49.0x (4800% increase)
+    //
+    // Recommended values: 0.05-0.2 (5%-20% per minute)
+    // WARNING: Values above 0.5 will cause extreme scaling!
+    "TimeScalingFactor": 0.1,
+
+    // Whether stats should scale with survive time
+    "ScaleWithTime": true,
+
+    // Health multiplier for enemies (1.0 = normal, 2.0 = double health, 0.5 = half health)
+    // Also affects XP scaling: higher health = more XP (max 30% bonus at 5x health)
+    // Time scaling: After 24 minutes, final health = HealthMultiplier × 3.4
+    // Examples: 1.47 = 5.0x health at 24min, 1.5 = 5.1x health at 24min
+    // WARNING: Values of 0.0 will disable health scaling completely
+    "HealthMultiplier": 1.0,
+
+    // Damage multiplier for enemies (1.0 = normal, 2.0 = double damage, 0.5 = half damage)
+    // WARNING: Values of 0.0 will disable damage scaling completely
+    "DamageMultiplier": 1.0,
+
+    // Movement speed multiplier for enemies (1.0 = normal, 1.5 = 50% faster, 0.5 = half speed)
+    // Also affects XP scaling: higher speed = more XP (max 20% bonus at 4x speed)
+    // Time scaling: After 24 minutes, final speed = MovementSpeedMultiplier × 3.4
+    // Examples: 1.18 = 4.0x speed at 24min, 1.2 = 4.08x speed at 24min
+    // WARNING: Values of 0.0 will disable speed scaling completely
+    "MovementSpeedMultiplier": 1.0,
+
+    // Armor multiplier for enemies (1.0 = normal, 2.0 = double armor, 0.5 = half armor)
+    // Note: Enemies get 1 base armor before scaling
+    // WARNING: Values of 0.0 will disable armor scaling completely
+    "ArmorMultiplier": 1.0,
+
+    // Projectile fire rate multiplier for enemies (1.0 = normal, 2.0 = double fire rate, 0.5 = half fire rate)
+    // Affects how fast enemies shoot projectiles (Gang Gang, Dingleberry, Splitserpent, etc.)
+    // Time scaling: After 24 minutes, final fire rate = ProjectileFireRateMultiplier × 3.4
+    // Examples: 2.0 = enemies shoot twice as fast, 0.5 = enemies shoot half as fast
+    // WARNING: Values of 0.0 will disable fire rate scaling completely
+    "ProjectileFireRateMultiplier": 1.0,
+
+    // Ability cooldown multiplier for enemies (1.0 = normal, 1.5 = abilities recharge 50% faster, 2.0 = twice as fast)
+    // Higher values = faster ability recharge = more aggressive enemies (Bee boss charge attacks, mini-boss special moves, etc.)
+    // Time scaling: After 24 minutes, final cooldown = AbilityCooldownMultiplier × 3.4
+    // Examples: 1.5 = abilities recharge 50% faster, 2.0 = abilities recharge twice as fast
+    // WARNING: Values of 0.0 will disable ability cooldown scaling completely
+    "AbilityCooldownMultiplier": 1.0,
+
+    // Whether XP should scale based on enemy stats (health and movement speed)
+    // Uses actual stat values (including time scaling) for XP calculations
+    // Max 50% total bonus: 30% from health, 20% from speed
+    "ScaleXPWithStats": true,
+
+    // Show debug messages when scaling is applied
+    // Useful for understanding how XP scaling works
+    "ShowDebugMessages": false
+  }
+
+  // ================================================================
+  // PERFORMANCE TIPS:
+  // - Start with ExtraSpawns: 1, increase gradually
+  // - Keep ExcludeSplitters: true to prevent lag
+  // - Lower MaxEnemyEntities if game slows down
+  // - Enable ShowDebugMessages only for troubleshooting
+  // ================================================================
+}

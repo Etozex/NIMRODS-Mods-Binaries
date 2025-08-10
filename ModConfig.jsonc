@@ -25,6 +25,9 @@
     // Show debug messages in game console
     "ShowDebugMessages": false,
     
+    // Exclude bees spawned from hives (recommended: true). Uses queue detection + short time-window fallback.
+    "ExcludeHiveBees": true,
+    
     // Enable automatic mini-boss spawning during gameplay
     //Turn off boss intro
     // Time-based progression: 0-4:15 (Splitserpent/Dingleberry) -> 4:15-8:15 (+Bertha) -> 8:15-12:15 (+Carl Jr/Charlie) -> 12:15+ (All bosses)
